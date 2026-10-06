@@ -5,23 +5,23 @@
 ```text
 rasmo/
 |-- app
-|	|-- camera				# simple camera applicaiton
-|	|-- dropbear-2025.88	# patched Dropbear SSH server
+|	|-- camera				# Simple camera application
+|	`-- dropbear-2025.88	# Patched Dropbear SSH server
 |-- include
 |-- script
 |	|-- seccomp				# Profiling script example
 |	|-- TLA+				# PlusCal/TLA+ spec for CPSP
-|	|-- workload			# misc scripts for evaluation
-|	|-- zabbix				# Zabbix server action scripts
+|	|-- workload			# Misc. scripts for evaluation
+|	`-- zabbix				# Zabbix server action scripts
 |-- src
 |	|-- access_*.{c,h}		# Login Filter
 |	|-- audit_plugin*.{c,h}	# Linux Auditd plugin
 |	|-- seccomp_*.{c,h}		# Supervisor (profiler and loader)
-|	|-- sysfilter*.{c,h}	# Syscall Filter
-|-- config					# config file examples for Linux Audit and Mosquitto broker
+|	`-- sysfilter*.{c,h}	# Syscall Filter
+|-- config					# Config file examples for Linux Audit and the Mosquitto broker
 |-- lib
-|-- README.mda
-|-- SETUP.md
+|-- README.md
+`-- SETUP.md
 ```
 
 ## RASMO Setup
