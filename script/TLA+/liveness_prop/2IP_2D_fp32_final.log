@@ -1,0 +1,42 @@
+TLC2 Version 2.19 of 08 August 2024 (rev: 5a47802)
+Running breadth-first search Model-Checking with fp 32 and seed -6695428574451350735 with 80 workers on 80 cores with 127431MB heap and 64MB offheap memory [pid: 88615] (Linux 5.15.0-187-generic amd64, Ubuntu 11.0.32 x86_64, MSBDiskFPSet, DiskStateQueue).
+Parsing file /home/yin/TLA/sc.tla
+Parsing file /tmp/Naturals.tla
+Parsing file /tmp/Sequences.tla
+Parsing file /tmp/TLC.tla
+Parsing file /tmp/FiniteSets.tla
+Semantic processing of module Naturals
+Semantic processing of module Sequences
+Semantic processing of module FiniteSets
+Semantic processing of module TLC
+Semantic processing of module sc
+Starting... (2026-09-06 10:48:09)
+Implied-temporal checking--satisfiability problem has 1 branches.
+Computing initial states...
+Finished computing initial states: 1 distinct state generated at 2026-09-06 10:48:10.
+Progress(14) at 2026-09-06 10:48:13: 100,662 states generated (100,662 s/min), 38,316 distinct states found (38,316 ds/min), 20,926 states left on queue.
+Progress(22) at 2026-09-06 10:49:13: 10,251,333 states generated (10,150,671 s/min), 2,728,527 distinct states found (2,690,211 ds/min), 858,301 states left on queue.
+Progress(24) at 2026-09-06 10:50:13: 20,676,463 states generated (10,425,130 s/min), 5,108,949 distinct states found (2,380,422 ds/min), 1,299,272 states left on queue.
+Progress(26) at 2026-09-06 10:51:13: 31,144,135 states generated (10,467,672 s/min), 7,324,586 distinct states found (2,215,637 ds/min), 1,572,037 states left on queue.
+Progress(27) at 2026-09-06 10:52:13: 41,280,932 states generated (10,136,797 s/min), 9,367,009 distinct states found (2,042,423 ds/min), 1,728,705 states left on queue.
+Progress(28) at 2026-09-06 10:53:13: 51,768,989 states generated (10,488,057 s/min), 11,383,132 distinct states found (2,016,123 ds/min), 1,796,119 states left on queue.
+Progress(29) at 2026-09-06 10:54:13: 62,170,913 states generated (10,401,924 s/min), 13,299,365 distinct states found (1,916,233 ds/min), 1,794,160 states left on queue.
+Progress(30) at 2026-09-06 10:55:13: 72,258,054 states generated (10,087,141 s/min), 15,097,250 distinct states found (1,797,885 ds/min), 1,747,026 states left on queue.
+Progress(31) at 2026-09-06 10:56:13: 82,703,244 states generated (10,445,190 s/min), 16,888,109 distinct states found (1,790,859 ds/min), 1,632,770 states left on queue.
+Progress(32) at 2026-09-06 10:57:13: 93,118,131 states generated (10,414,887 s/min), 18,603,065 distinct states found (1,714,956 ds/min), 1,468,285 states left on queue.
+Progress(34) at 2026-09-06 10:58:13: 103,494,437 states generated (10,376,306 s/min), 20,253,738 distinct states found (1,650,673 ds/min), 1,248,939 states left on queue.
+Progress(35) at 2026-09-06 10:59:13: 113,904,593 states generated (10,410,156 s/min), 21,843,490 distinct states found (1,589,752 ds/min), 962,882 states left on queue.
+Progress(37) at 2026-09-06 11:00:13: 123,953,005 states generated (10,048,412 s/min), 23,284,790 distinct states found (1,441,300 ds/min), 611,688 states left on queue.
+Progress(42) at 2026-09-06 11:01:13: 134,310,747 states generated (10,357,742 s/min), 24,631,412 distinct states found (1,346,622 ds/min), 113,108 states left on queue.
+Progress(52) at 2026-09-06 11:01:22: 135,856,855 states generated, 24,795,585 distinct states found, 0 states left on queue.
+Checking temporal properties for the complete state space with 24795585 total distinct states at (2026-09-06 11:01:22)
+Finished checking temporal properties in 03min 46s at 2026-09-06 11:05:08
+Model checking completed. No error has been found.
+  Estimates of the probability that TLC did not check all reachable states
+  because two distinct states had the same fingerprint:
+  calculated (optimistic):  val = 1.5E-4
+  based on the actual fingerprints:  val = 2.3E-4
+135856855 states generated, 24795585 distinct states found, 0 states left on queue.
+The depth of the complete state graph search is 52.
+The average outdegree of the complete state graph is 1 (minimum is 0, the maximum 7 and the 95th percentile is 3).
+Finished in 17min 03s at (2026-09-06 11:05:12)

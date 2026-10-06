@@ -1,0 +1,221 @@
+TLC2 Version 2.19 of 08 August 2024 (rev: 5a47802)
+Running breadth-first search Model-Checking with fp 54 and seed -7455073299614510860 with 80 workers on 80 cores with 136533MB heap and 64MB offheap memory [pid: 67907] (Linux 5.15.0-187-generic amd64, Ubuntu 11.0.32 x86_64, MSBDiskFPSet, DiskStateQueue).
+Parsing file /home/yin/TLA/sc.tla
+Parsing file /tmp/Naturals.tla
+Parsing file /tmp/Sequences.tla
+Parsing file /tmp/TLC.tla
+Parsing file /tmp/FiniteSets.tla
+Semantic processing of module Naturals
+Semantic processing of module Sequences
+Semantic processing of module FiniteSets
+Semantic processing of module TLC
+Semantic processing of module sc
+Starting... (2026-09-05 02:08:20)
+Computing initial states...
+Finished computing initial states: 1 distinct state generated at 2026-09-05 02:08:21.
+Error: Invariant Reachability is violated.
+Error: The behavior up to this point is:
+State 1: <Initial predicate>
+/\ DeviceState = (d1 :> "NORMAL" @@ d2 :> "NORMAL")
+/\ NumUnblocks = 0
+/\ pc = ( d1 :> "dev_op" @@
+  d2 :> "dev_op" @@
+  AdminProc :> "unblock" @@
+  [type |-> "sync", dev |-> d1] :> "odbc" @@
+  [type |-> "sync", dev |-> d2] :> "odbc" @@
+  [type |-> "recv", dev |-> d1] :> "receive" @@
+  [type |-> "recv", dev |-> d2] :> "receive" )
+/\ NumFails = (d1 :> 0 @@ d2 :> 0)
+/\ SenderBuf = ([type |-> "recv", dev |-> d1] :> {} @@ [type |-> "recv", dev |-> d2] :> {})
+/\ SyncBuf = (d1 :> {} @@ d2 :> {})
+/\ GlobalBlocklist = {}
+/\ CurIP = (d1 :> NULL @@ d2 :> NULL)
+/\ Cursor = ([type |-> "sync", dev |-> d1] :> 0 @@ [type |-> "sync", dev |-> d2] :> 0)
+/\ LastSyncedXid = (d1 :> 0 @@ d2 :> 0)
+/\ LocalBlocklist = (d1 :> {} @@ d2 :> {})
+/\ LocalLog = (d1 :> {} @@ d2 :> {})
+
+State 2: <dev_op line 292, col 17 to line 305, col 61 of module sc>
+/\ DeviceState = (d1 :> "NORMAL" @@ d2 :> "NORMAL")
+/\ NumUnblocks = 0
+/\ pc = ( d1 :> "commit" @@
+  d2 :> "dev_op" @@
+  AdminProc :> "unblock" @@
+  [type |-> "sync", dev |-> d1] :> "odbc" @@
+  [type |-> "sync", dev |-> d2] :> "odbc" @@
+  [type |-> "recv", dev |-> d1] :> "receive" @@
+  [type |-> "recv", dev |-> d2] :> "receive" )
+/\ NumFails = (d1 :> 0 @@ d2 :> 0)
+/\ SenderBuf = ([type |-> "recv", dev |-> d1] :> {} @@ [type |-> "recv", dev |-> d2] :> {})
+/\ SyncBuf = (d1 :> {} @@ d2 :> {})
+/\ GlobalBlocklist = {}
+/\ CurIP = (d1 :> ip1 @@ d2 :> NULL)
+/\ Cursor = ([type |-> "sync", dev |-> d1] :> 0 @@ [type |-> "sync", dev |-> d2] :> 0)
+/\ LastSyncedXid = (d1 :> 0 @@ d2 :> 0)
+/\ LocalBlocklist = (d1 :> {} @@ d2 :> {})
+/\ LocalLog = ( d1 :>
+      { [ ip |-> ip1,
+          committed |-> FALSE,
+          sync |-> FALSE,
+          unblocked |-> FALSE ] } @@
+  d2 :> {} )
+
+State 3: <commit line 307, col 17 to line 319, col 46 of module sc>
+/\ DeviceState = (d1 :> "NORMAL" @@ d2 :> "NORMAL")
+/\ NumUnblocks = 0
+/\ pc = ( d1 :> "send" @@
+  d2 :> "dev_op" @@
+  AdminProc :> "unblock" @@
+  [type |-> "sync", dev |-> d1] :> "odbc" @@
+  [type |-> "sync", dev |-> d2] :> "odbc" @@
+  [type |-> "recv", dev |-> d1] :> "receive" @@
+  [type |-> "recv", dev |-> d2] :> "receive" )
+/\ NumFails = (d1 :> 0 @@ d2 :> 0)
+/\ SenderBuf = ([type |-> "recv", dev |-> d1] :> {} @@ [type |-> "recv", dev |-> d2] :> {})
+/\ SyncBuf = (d1 :> {} @@ d2 :> {})
+/\ GlobalBlocklist = {}
+/\ CurIP = (d1 :> ip1 @@ d2 :> NULL)
+/\ Cursor = ([type |-> "sync", dev |-> d1] :> 0 @@ [type |-> "sync", dev |-> d2] :> 0)
+/\ LastSyncedXid = (d1 :> 0 @@ d2 :> 0)
+/\ LocalBlocklist = (d1 :> {ip1} @@ d2 :> {})
+/\ LocalLog = ( d1 :>
+      {[ip |-> ip1, committed |-> TRUE, sync |-> FALSE, unblocked |-> FALSE]} @@
+  d2 :> {} )
+
+State 4: <send line 321, col 15 to line 332, col 44 of module sc>
+/\ DeviceState = (d1 :> "NORMAL" @@ d2 :> "NORMAL")
+/\ NumUnblocks = 0
+/\ pc = ( d1 :> "dev_op" @@
+  d2 :> "dev_op" @@
+  AdminProc :> "unblock" @@
+  [type |-> "sync", dev |-> d1] :> "odbc" @@
+  [type |-> "sync", dev |-> d2] :> "odbc" @@
+  [type |-> "recv", dev |-> d1] :> "receive" @@
+  [type |-> "recv", dev |-> d2] :> "receive" )
+/\ NumFails = (d1 :> 0 @@ d2 :> 0)
+/\ SenderBuf = ( [type |-> "recv", dev |-> d1] :> {[ip |-> ip1, xid |-> 0]} @@
+  [type |-> "recv", dev |-> d2] :> {} )
+/\ SyncBuf = (d1 :> {} @@ d2 :> {})
+/\ GlobalBlocklist = {}
+/\ CurIP = (d1 :> NULL @@ d2 :> NULL)
+/\ Cursor = ([type |-> "sync", dev |-> d1] :> 0 @@ [type |-> "sync", dev |-> d2] :> 0)
+/\ LastSyncedXid = (d1 :> 0 @@ d2 :> 0)
+/\ LocalBlocklist = (d1 :> {ip1} @@ d2 :> {})
+/\ LocalLog = ( d1 :>
+      {[ip |-> ip1, committed |-> TRUE, sync |-> FALSE, unblocked |-> FALSE]} @@
+  d2 :> {} )
+
+State 5: <receive line 398, col 18 to line 416, col 62 of module sc>
+/\ DeviceState = (d1 :> "NORMAL" @@ d2 :> "NORMAL")
+/\ NumUnblocks = 0
+/\ pc = ( d1 :> "dev_op" @@
+  d2 :> "dev_op" @@
+  AdminProc :> "unblock" @@
+  [type |-> "sync", dev |-> d1] :> "odbc" @@
+  [type |-> "sync", dev |-> d2] :> "odbc" @@
+  [type |-> "recv", dev |-> d1] :> "receive" @@
+  [type |-> "recv", dev |-> d2] :> "receive" )
+/\ NumFails = (d1 :> 0 @@ d2 :> 0)
+/\ SenderBuf = ([type |-> "recv", dev |-> d1] :> {} @@ [type |-> "recv", dev |-> d2] :> {})
+/\ SyncBuf = (d1 :> {} @@ d2 :> {})
+/\ GlobalBlocklist = {[ip |-> ip1, xid |-> 1, unblocked |-> FALSE]}
+/\ CurIP = (d1 :> NULL @@ d2 :> NULL)
+/\ Cursor = ([type |-> "sync", dev |-> d1] :> 0 @@ [type |-> "sync", dev |-> d2] :> 0)
+/\ LastSyncedXid = (d1 :> 0 @@ d2 :> 0)
+/\ LocalBlocklist = (d1 :> {ip1} @@ d2 :> {})
+/\ LocalLog = ( d1 :>
+      {[ip |-> ip1, committed |-> TRUE, sync |-> FALSE, unblocked |-> FALSE]} @@
+  d2 :> {} )
+
+State 6: <odbc line 420, col 15 to line 429, col 59 of module sc>
+/\ DeviceState = (d1 :> "NORMAL" @@ d2 :> "NORMAL")
+/\ NumUnblocks = 0
+/\ pc = ( d1 :> "dev_op" @@
+  d2 :> "dev_op" @@
+  AdminProc :> "unblock" @@
+  [type |-> "sync", dev |-> d1] :> "odbc" @@
+  [type |-> "sync", dev |-> d2] :> "odbc" @@
+  [type |-> "recv", dev |-> d1] :> "receive" @@
+  [type |-> "recv", dev |-> d2] :> "receive" )
+/\ NumFails = (d1 :> 0 @@ d2 :> 0)
+/\ SenderBuf = ([type |-> "recv", dev |-> d1] :> {} @@ [type |-> "recv", dev |-> d2] :> {})
+/\ SyncBuf = (d1 :> {[ip |-> ip1, xid |-> 1, unblocked |-> FALSE]} @@ d2 :> {})
+/\ GlobalBlocklist = {[ip |-> ip1, xid |-> 1, unblocked |-> FALSE]}
+/\ CurIP = (d1 :> NULL @@ d2 :> NULL)
+/\ Cursor = ([type |-> "sync", dev |-> d1] :> 0 @@ [type |-> "sync", dev |-> d2] :> 0)
+/\ LastSyncedXid = (d1 :> 0 @@ d2 :> 0)
+/\ LocalBlocklist = (d1 :> {ip1} @@ d2 :> {})
+/\ LocalLog = ( d1 :>
+      {[ip |-> ip1, committed |-> TRUE, sync |-> FALSE, unblocked |-> FALSE]} @@
+  d2 :> {} )
+
+State 7: <dev_op line 292, col 17 to line 305, col 61 of module sc>
+/\ DeviceState = (d1 :> "NORMAL" @@ d2 :> "NORMAL")
+/\ NumUnblocks = 0
+/\ pc = ( d1 :> "sync" @@
+  d2 :> "dev_op" @@
+  AdminProc :> "unblock" @@
+  [type |-> "sync", dev |-> d1] :> "odbc" @@
+  [type |-> "sync", dev |-> d2] :> "odbc" @@
+  [type |-> "recv", dev |-> d1] :> "receive" @@
+  [type |-> "recv", dev |-> d2] :> "receive" )
+/\ NumFails = (d1 :> 0 @@ d2 :> 0)
+/\ SenderBuf = ([type |-> "recv", dev |-> d1] :> {} @@ [type |-> "recv", dev |-> d2] :> {})
+/\ SyncBuf = (d1 :> {[ip |-> ip1, xid |-> 1, unblocked |-> FALSE]} @@ d2 :> {})
+/\ GlobalBlocklist = {[ip |-> ip1, xid |-> 1, unblocked |-> FALSE]}
+/\ CurIP = (d1 :> NULL @@ d2 :> NULL)
+/\ Cursor = ([type |-> "sync", dev |-> d1] :> 0 @@ [type |-> "sync", dev |-> d2] :> 0)
+/\ LastSyncedXid = (d1 :> 0 @@ d2 :> 0)
+/\ LocalBlocklist = (d1 :> {ip1} @@ d2 :> {})
+/\ LocalLog = ( d1 :>
+      {[ip |-> ip1, committed |-> TRUE, sync |-> FALSE, unblocked |-> FALSE]} @@
+  d2 :> {} )
+
+State 8: <sync line 334, col 15 to line 360, col 51 of module sc>
+/\ DeviceState = (d1 :> "NORMAL" @@ d2 :> "NORMAL")
+/\ NumUnblocks = 0
+/\ pc = ( d1 :> "sync_ack" @@
+  d2 :> "dev_op" @@
+  AdminProc :> "unblock" @@
+  [type |-> "sync", dev |-> d1] :> "odbc" @@
+  [type |-> "sync", dev |-> d2] :> "odbc" @@
+  [type |-> "recv", dev |-> d1] :> "receive" @@
+  [type |-> "recv", dev |-> d2] :> "receive" )
+/\ NumFails = (d1 :> 0 @@ d2 :> 0)
+/\ SenderBuf = ([type |-> "recv", dev |-> d1] :> {} @@ [type |-> "recv", dev |-> d2] :> {})
+/\ SyncBuf = (d1 :> {} @@ d2 :> {})
+/\ GlobalBlocklist = {[ip |-> ip1, xid |-> 1, unblocked |-> FALSE]}
+/\ CurIP = (d1 :> NULL @@ d2 :> NULL)
+/\ Cursor = ([type |-> "sync", dev |-> d1] :> 0 @@ [type |-> "sync", dev |-> d2] :> 0)
+/\ LastSyncedXid = (d1 :> 1 @@ d2 :> 0)
+/\ LocalBlocklist = (d1 :> {ip1} @@ d2 :> {})
+/\ LocalLog = ( d1 :>
+      {[ip |-> ip1, committed |-> TRUE, sync |-> TRUE, unblocked |-> FALSE]} @@
+  d2 :> {} )
+
+State 9: <sync_ack line 362, col 19 to line 372, col 70 of module sc>
+/\ DeviceState = (d1 :> "NORMAL" @@ d2 :> "NORMAL")
+/\ NumUnblocks = 0
+/\ pc = ( d1 :> "dev_op" @@
+  d2 :> "dev_op" @@
+  AdminProc :> "unblock" @@
+  [type |-> "sync", dev |-> d1] :> "odbc" @@
+  [type |-> "sync", dev |-> d2] :> "odbc" @@
+  [type |-> "recv", dev |-> d1] :> "receive" @@
+  [type |-> "recv", dev |-> d2] :> "receive" )
+/\ NumFails = (d1 :> 0 @@ d2 :> 0)
+/\ SenderBuf = ([type |-> "recv", dev |-> d1] :> {} @@ [type |-> "recv", dev |-> d2] :> {})
+/\ SyncBuf = (d1 :> {} @@ d2 :> {})
+/\ GlobalBlocklist = {[ip |-> ip1, xid |-> 1, unblocked |-> FALSE]}
+/\ CurIP = (d1 :> NULL @@ d2 :> NULL)
+/\ Cursor = ([type |-> "sync", dev |-> d1] :> 1 @@ [type |-> "sync", dev |-> d2] :> 0)
+/\ LastSyncedXid = (d1 :> 1 @@ d2 :> 0)
+/\ LocalBlocklist = (d1 :> {ip1} @@ d2 :> {})
+/\ LocalLog = ( d1 :>
+      {[ip |-> ip1, committed |-> TRUE, sync |-> TRUE, unblocked |-> FALSE]} @@
+  d2 :> {} )
+
+10372 states generated, 4521 distinct states found, 2618 states left on queue.
+The depth of the complete state graph search is 15.
+The average outdegree of the complete state graph is 2 (minimum is 0, the maximum 6 and the 95th percentile is 4).
+Finished in 01s at (2026-09-05 02:08:21)

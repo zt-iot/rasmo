@@ -1,0 +1,7 @@
+*.swp
+a.out
+*.o
+*.db
+*.a
+__pycache__
+.DS_Store
