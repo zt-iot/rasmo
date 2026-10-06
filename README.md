@@ -151,7 +151,7 @@ Edit odbc.ini and odbcinst.ini
 * Get Zabbix default home
 
 ```sh
-getent passwd zabbix`	# by default /var/lib/zabbix
+getent passwd zabbix	# by default /var/lib/zabbix
 ```
 
 Put `.pgpass` file in Zabbix home directory remember to `chown` and `chmod 600`.
