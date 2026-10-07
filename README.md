@@ -4,21 +4,29 @@
 
 ```text
 rasmo/
-|-- app
-|	|-- camera				# Simple camera application
-|	`-- dropbear-2025.88	# Patched Dropbear SSH server
-|-- include
-|-- script
-|	|-- seccomp				# Profiling script example
-|	|-- TLA+				# PlusCal/TLA+ spec for CPSP
-|	|-- workload			# Misc. scripts for evaluation
-|	`-- zabbix				# Zabbix server action scripts
-|-- src
+|-- app/
+|	|-- camera/				# Simple camera application
+|	`-- dropbear-2025.88/	# Patched Dropbear SSH server
+|-- include/
+|-- script/
+|	|-- seccomp/			# Profiling script example
+|	|-- TLA+/				# PlusCal/TLA+ spec for CPSP
+|	|	|-- liveness_prop/	# Liveness checking results
+|	|	|-- safety_invar/	# Safety checking results
+|	|	|-- model_check.sh	# Script to start verification
+|	|	|-- sc.tla			# CPSP spec
+|	|	`-- sc.cfg			# Config for model checking
+|	|-- workload/			# Misc. scripts for evaluation
+|	`-- zabbix/				# Zabbix server action scripts
+|-- eval/
+|	|-- Overhead.xlsx		# RASMO overhead evaluation data
+|	`-- SyncLatency.xlsx	# CPSP sync latency evaluation data
+|-- src/
 |	|-- access_*.{c,h}		# Login Filter
 |	|-- audit_plugin*.{c,h}	# Linux Auditd plugin
 |	|-- seccomp_*.{c,h}		# Supervisor (profiler and loader)
 |	`-- sysfilter*.{c,h}	# Syscall Filter
-|-- config					# Config file examples for Linux Audit and the Mosquitto broker
+|-- config/					# Config file examples for Linux Audit and the Mosquitto broker
 |-- lib
 |-- README.md
 `-- SETUP.md
@@ -77,7 +85,7 @@ For example, libcamera:
 Execute the command:
 
 ```sh
-	./seccomp_load -i <profile_path> -- <app_path> <app_args>
+./seccomp_load -i <profile_path> -- <app_path> <app_args>
 ```
 
 For example, video streamer:
